@@ -3,6 +3,7 @@
   var stageNum = document.querySelector(".stage-num");
   var stageCaption = document.querySelector(".stage-caption");
   var current = "tea";
+  var active = null;
 
   function setPhoto(name) {
     if (!name || name === current) return;
@@ -16,6 +17,8 @@
   }
 
   function show(section) {
+    if (!section || section === active) return;
+    active = section;
     setPhoto(section.dataset.photo);
     stageNum.textContent = section.dataset.num || "";
     stageCaption.textContent = section.dataset.caption || "";
@@ -25,14 +28,15 @@
     });
   }
 
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(function (entries) {
-      var visible = entries
-        .filter(function (entry) { return entry.isIntersecting; })
-        .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; })[0];
-      if (visible) show(visible.target);
-    }, { rootMargin: "-35% 0px -45% 0px", threshold: [0.15, 0.4, 0.75] });
-    document.querySelectorAll(".chapter").forEach(function (chapter) { observer.observe(chapter); });
+  var chapters = document.querySelectorAll(".chapter");
+
+  function chapterAtMark() {
+    var mark = window.innerHeight * 0.42;
+    var chosen = chapters[0];
+    chapters.forEach(function (chapter) {
+      if (chapter.getBoundingClientRect().top <= mark) chosen = chapter;
+    });
+    if (chosen) show(chosen);
   }
 
   var ticking = false;
@@ -43,7 +47,9 @@
       var max = document.documentElement.scrollHeight - window.innerHeight;
       var y = window.scrollY || window.pageYOffset || 0;
       progress.style.transform = "scaleX(" + (max > 0 ? Math.min(1, y / max) : 0) + ")";
+      chapterAtMark();
       ticking = false;
     });
   }, { passive: true });
+  chapterAtMark();
 })();
