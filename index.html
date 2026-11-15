@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let's ride together · Solene</title>
+  <meta name="description" content="Tell Solene how you ride, and where you'd love to go. Horseback adventures for riders 18 and over. No booking and no payment here.">
+  <meta name="theme-color" content="#f2eadc">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='8' fill='%238a4b2a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#you">Skip to the questions</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero-media">
+      <img src="images/hills.jpg" width="1024" height="920" alt="Solene in profile on a dark horse in dry grass, holding a hat, with ridgelines behind her." fetchpriority="high">
+    </div>
+    <div class="hero-shade"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">Horseback with Solene</p>
+      <h1>Let's ride<br><em>together.</em></h1>
+    </div>
+    <div class="hero-follow">
+      <div class="hero-lead">
+        <p>I'm planning a few adventures on horseback, and I'd like company.</p>
+        <p>If a new country from the saddle sounds like your trip, tell me a little about you.</p>
+        <p class="fine hero-note">A few minutes. Nothing to pay.</p>
+      </div>
+      <a class="handle" href="https://www.instagram.com/solene.horses/" target="_blank" rel="noreferrer">@solene.horses</a>
+      <div class="hero-actions">
+        <a class="button" href="#you">Tell me about you</a>
+      </div>
+    </div>
+    <a class="cue" href="#you">Start</a>
+  </header>
+
+  <div class="ride">
+    <aside class="stage">
+      <img class="is-on" data-photo="hills" src="images/hills.jpg" width="1024" height="920" alt="Solene in profile on a dark horse in dry grass, holding a hat, with ridgelines behind her.">
+      <img data-photo="pyramids" src="images/pyramids.jpg" width="768" height="1024" alt="Solene smiling on a dark horse, the pyramids rising behind her." aria-hidden="true">
+      <img data-photo="bench" src="images/bench.jpg" width="768" height="1024" alt="Solene seated on a wooden bench in long grass, a saddled brown horse standing beside her." aria-hidden="true">
+      <img data-photo="cave" src="images/cave.jpg" width="1024" height="576" alt="Solene standing with a horse inside a pale rock arch above the valleys of Cappadocia." aria-hidden="true">
+      <div class="grain"></div>
+      <div class="stage-copy">
+        <p class="stage-num">01</p>
+        <p class="stage-caption">Open grass, a long horizon.</p>
+      </div>
+    </aside>
+
+    <div class="sheet">
+      <nav class="index" aria-label="Parts of this page">
+        <a href="#you">You</a>
+        <a href="#ride">Riding</a>
+        <a href="#talk">Talk</a>
+        <a href="#days">Days</a>
+        <a href="#places">Places</a>
+        <a href="#when">When</a>
+        <a href="#after">After</a>
+      </nav>
+
+      <noscript>
+        <p class="noscript">This page needs JavaScript to send your note. You can still use <a href="https://docs.google.com/forms/d/e/1FAIpQLSel39w7k-xk6eWdD2LB20zRB1avHPi_IATkWmMms8FCMqltXw/viewform">the original form</a>.</p>
+      </noscript>
+
+      <div class="sheet-inner">
+        <form id="note" novalidate>
+          <div id="summary" class="summary" role="alert" hidden></div>
+
+          <section class="chapter" id="you" data-photo="hills" data-num="01" data-caption="Open grass, a long horizon.">
+            <p class="num">01</p>
+            <h2>You</h2>
+            <p class="deck">A name, a birthday, and where you live. That's the start.</p>
+            <div class="fields">
+              <div class="pair">
+                <label class="field" for="first">
+                  <span>First name</span>
+                  <input id="first" name="first" autocomplete="given-name" maxlength="80">
+                  <small class="err" id="err-first" hidden></small>
+                </label>
+                <label class="field" for="last">
+                  <span>Last name</span>
+                  <input id="last" name="last" autocomplete="family-name" maxlength="80">
+                  <small class="err" id="err-last" hidden></small>
+                </label>
+              </div>
+              <label class="field" for="email">
+                <span>Email address</span>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" spellcheck="false">
+                <small class="err" id="err-email" hidden></small>
+              </label>
+              <div class="field" id="birthday" role="group" aria-labelledby="birthday-label">
+                <span id="birthday-label">When's your birthday?</span>
+                <div class="date">
+                  <label>
+                    <span class="sr-only">Day</span>
+                    <select id="day" name="day" autocomplete="bday-day"></select>
+                  </label>
+                  <label>
+                    <span class="sr-only">Month</span>
+                    <select id="month" name="month" autocomplete="bday-month"></select>
+                  </label>
+                  <label>
+                    <span class="sr-only">Year</span>
+                    <select id="year" name="year" autocomplete="bday-year"></select>
+                  </label>
+                </div>
+                <small class="err" id="err-birthday" hidden></small>
+              </div>
+              <div class="pair">
+                <label class="field" for="city">
+                  <span>Which city or town do you live in?</span>
+                  <input id="city" name="city" autocomplete="address-level2" maxlength="120">
+                  <small class="err" id="err-city" hidden></small>
+                </label>
+                <label class="field" for="country">
+                  <span>And which country?</span>
+                  <input id="country" name="country" autocomplete="country-name" maxlength="120">
+                  <small class="err" id="err-country" hidden></small>
+                </label>
+              </div>
+              <label class="field" for="nationality">
+                <span>What's your nationality?</span>
+                <input id="nationality" name="nationality" maxlength="160" placeholder="If you have more than one, list them.">
+                <small class="err" id="err-nationality" hidden></small>
+              </label>
+            </div>
+          </section>
+
+          <figure class="mobile-photo pyramids">
+            <img src="images/pyramids.jpg" width="768" height="1024" alt="Solene smiling on a dark horse, the pyramids rising behind her." loading="lazy">
+          </figure>
+
+          <section class="chapter" id="ride" data-photo="pyramids" data-num="02" data-caption="A new country. The same quiet.">
+            <p class="num">02</p>
+            <h2>How you ride</h2>
+            <p class="deck">Honest is more useful than impressive. The closest one is enough.</p>
+            <fieldset id="riding">
+              <legend class="legend">How would you describe your riding? Pick the one that sounds most like you.</legend>
+              <div class="choices">
+                <label class="choice">
+                  <input type="radio" name="riding" data-key="beginner">
+                  <span class="choice-title">Beginner</span>
+                  <span class="choice-body">Still learning walk and trot. Not yet cantering on my own.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="riding" data-key="intermediate">
+                  <span class="choice-title">Intermediate</span>
+                  <span class="choice-body">Walk, trot and canter in an arena. Building confidence on trails.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="riding" data-key="advanced">
+                  <span class="choice-title">Advanced</span>
+                  <span class="choice-body">All three gaits outdoors, on unfamiliar horses and varied ground. Able to keep a pace in a group.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="riding" data-key="professional">
+                  <span class="choice-title">Professional</span>
+                  <span class="choice-body">I ride, train or teach for a living. The advanced description still fits how I ride outside.</span>
+                </label>
+              </div>
+              <small class="err" id="err-riding" hidden></small>
+            </fieldset>
+          </section>
+
+          <section class="chapter" id="talk" data-photo="pyramids" data-num="03" data-caption="A new country. The same quiet.">
+            <p class="num">03</p>
+            <h2>So we can talk</h2>
+            <p class="deck">Languages, the airport you usually use, and the easy ways to reach you.</p>
+            <fieldset id="languages">
+              <legend class="legend">Which languages do you speak? Pick as many as you like.</legend>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="languages" data-key="english"><span>English</span></label>
+                <label class="chip"><input type="checkbox" name="languages" data-key="french"><span>French</span></label>
+                <label class="chip"><input type="checkbox" name="languages" data-key="spanish"><span>Spanish</span></label>
+                <label class="chip"><input type="checkbox" name="languages" data-key="german"><span>German</span></label>
+                <label class="chip"><input type="checkbox" name="languages" data-key="arabic"><span>Arabic</span></label>
+                <label class="chip"><input type="checkbox" name="languages" data-key="other" data-other="languageOther"><span>Another</span></label>
+              </div>
+              <p class="count" id="language-count"></p>
+              <div class="other" id="wrap-languageOther">
+                <div class="other-inner">
+                  <label class="field" for="languageOther">
+                    <span>Which language?</span>
+                    <input id="languageOther" name="languageOther" maxlength="80">
+                    <small class="err" id="err-languageOther" hidden></small>
+                  </label>
+                </div>
+              </div>
+              <small class="err" id="err-languages" hidden></small>
+            </fieldset>
+            <div class="fields">
+              <label class="field" for="airport">
+                <span>Which airport would you usually fly from?</span>
+                <input id="airport" name="airport" maxlength="120" placeholder="City or code. Paris, or CDG." spellcheck="false">
+                <small class="err" id="err-airport" hidden></small>
+              </label>
+              <div class="pair">
+                <label class="field" for="instagram">
+                  <span>On Instagram? Optional.</span>
+                  <input id="instagram" name="instagram" maxlength="80" placeholder="@" spellcheck="false" autocapitalize="off">
+                </label>
+                <label class="field" for="whatsapp">
+                  <span>WhatsApp number. Optional.</span>
+                  <input id="whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" maxlength="40" placeholder="With country code">
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <figure class="mobile-photo bench">
+            <img src="images/bench.jpg" width="768" height="1024" alt="Solene seated on a wooden bench in long grass, a saddled brown horse standing beside her." loading="lazy">
+          </figure>
+
+          <section class="chapter" id="days" data-photo="bench" data-num="04" data-caption="A pause, with the horse close.">
+            <p class="num">04</p>
+            <h2>The kind of days</h2>
+            <p class="deck">Pick as many as you like. A mix is a fair answer.</p>
+            <fieldset id="styles">
+              <legend class="legend">What's your kind of riding adventure?</legend>
+              <div class="stack">
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="rustic">
+                  <span class="choice-title">Rustic</span>
+                  <span class="choice-body">Close to nature. Simple stays, camping, fewer comforts.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="comfortable">
+                  <span class="choice-title">Comfortable</span>
+                  <span class="choice-body">Welcoming guesthouses or lodges.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="luxury">
+                  <span class="choice-title">A little luxury</span>
+                  <span class="choice-body">Beautiful stays, and extra comfort.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="point">
+                  <span class="choice-title">Point to point</span>
+                  <span class="choice-body">Riding somewhere new each day.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="base">
+                  <span class="choice-title">One base</span>
+                  <span class="choice-body">The same place, and a ride out each day.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="mix">
+                  <span class="choice-title">A mix</span>
+                  <span class="choice-body">Open to ideas.</span>
+                </label>
+                <label class="choice">
+                  <input type="checkbox" name="styles" data-key="other" data-other="styleOther">
+                  <span class="choice-title">Something else</span>
+                  <span class="choice-body">Tell me in a line.</span>
+                </label>
+              </div>
+              <p class="count" id="style-count"></p>
+              <div class="other" id="wrap-styleOther">
+                <div class="other-inner">
+                  <label class="field" for="styleOther">
+                    <span>What kind of days?</span>
+                    <input id="styleOther" name="styleOther" maxlength="180">
+                    <small class="err" id="err-styleOther" hidden></small>
+                  </label>
+                </div>
+              </div>
+              <small class="err" id="err-styles" hidden></small>
+            </fieldset>
+          </section>
+
+          <figure class="mobile-photo cave">
+            <img src="images/cave.jpg" width="1024" height="576" alt="Solene standing with a horse inside a pale rock arch above the valleys of Cappadocia." loading="lazy">
+          </figure>
+
+          <section class="chapter" id="places" data-photo="cave" data-num="05" data-caption="Cappadocia, from inside the rock.">
+            <p class="num">05</p>
+            <h2>Where you'd love to ride</h2>
+            <p class="deck">Ideas for later, not dates on a calendar. Pick your favourites.</p>
+            <fieldset id="places-set">
+              <legend class="legend">Where would you love to ride?</legend>
+              <div class="tiles">
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="south-africa">
+                  <span class="place">South Africa</span>
+                  <small></small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="cappadocia">
+                  <span class="place">Cappadocia</span>
+                  <small>Türkiye</small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="georgia">
+                  <span class="place">Georgia</span>
+                  <small>The country</small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="morocco">
+                  <span class="place">Morocco</span>
+                  <small></small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="arizona">
+                  <span class="place">Arizona</span>
+                  <small>USA</small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="open">
+                  <span class="place">Surprise me</span>
+                  <small>Inspire me</small>
+                </label>
+                <label class="tile">
+                  <input type="checkbox" name="places" data-key="other" data-other="placeOther">
+                  <span class="place">Somewhere else</span>
+                  <small>Write it in</small>
+                </label>
+              </div>
+              <p class="count" id="place-count"></p>
+              <div class="other" id="wrap-placeOther">
+                <div class="other-inner">
+                  <label class="field" for="placeOther">
+                    <span>Where else?</span>
+                    <input id="placeOther" name="placeOther" maxlength="180">
+                    <small class="err" id="err-placeOther" hidden></small>
+                  </label>
+                </div>
+              </div>
+              <small class="err" id="err-places-set" hidden></small>
+            </fieldset>
+          </section>
+
+          <section class="chapter" id="when" data-photo="cave" data-num="06" data-caption="Cappadocia, from inside the rock.">
+            <p class="num">06</p>
+            <h2>When, and with whom</h2>
+            <p class="deck">Both of these can wait, if you don't know yet.</p>
+            <div class="fields">
+              <label class="field" for="when-text">
+                <span>When would you love to travel?</span>
+                <textarea id="when-text" name="when" rows="2" maxlength="300" placeholder="A month, a year, or I'm flexible."></textarea>
+              </label>
+            </div>
+            <fieldset>
+              <legend class="legend">Who would you usually join a riding trip with?</legend>
+              <div class="split">
+                <label class="choice">
+                  <input type="radio" name="who" data-key="solo">
+                  <span class="choice-title">Just me</span>
+                  <span class="choice-body">Happy to meet new people.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="who" data-key="friends">
+                  <span class="choice-title">Friends</span>
+                  <span class="choice-body">A friend, or a few friends.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="who" data-key="partner">
+                  <span class="choice-title">My partner</span>
+                  <span class="choice-body">The two of us.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="who" data-key="depends">
+                  <span class="choice-title">It depends</span>
+                  <span class="choice-body">On the trip.</span>
+                </label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="chapter" id="after" data-photo="hills" data-num="07" data-caption="Open grass, a long horizon.">
+            <p class="num">07</p>
+            <h2>If a ride comes together</h2>
+            <p class="deck">Both answers are fine. Nothing here signs you up for a trip.</p>
+            <fieldset>
+              <legend class="legend">Want an email about future rides?</legend>
+              <p class="hint">You can unsubscribe any time.</p>
+              <div class="split">
+                <label class="choice">
+                  <input type="radio" name="updates" data-key="updates-yes">
+                  <span class="choice-title">Yes</span>
+                  <span class="choice-body">Keep me posted.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="updates" data-key="updates-no">
+                  <span class="choice-title">No thanks</span>
+                  <span class="choice-body">Just reply to this note.</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend class="legend">An invite to a future WhatsApp group?</legend>
+              <p class="hint">You choose whether to join. In a normal group, other members can see your number.</p>
+              <div class="split">
+                <label class="choice">
+                  <input type="radio" name="group" data-key="group-yes">
+                  <span class="choice-title">Send an invite</span>
+                  <span class="choice-body">I'll decide when it arrives.</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="group" data-key="group-no">
+                  <span class="choice-title">No thanks</span>
+                  <span class="choice-body">Leave this one.</span>
+                </label>
+              </div>
+            </fieldset>
+            <div class="send">
+              <button class="button saddle" id="send" type="submit">Send to Solene</button>
+              <p class="fine">For riders 18 and over. Solene reads this herself. No booking, and no payment.</p>
+            </div>
+          </section>
+        </form>
+
+        <section class="thanks" id="thanks" data-photo="hills" hidden>
+          <p class="eyebrow">Sent</p>
+          <h2 id="thanks-title" tabindex="-1">Got it.</h2>
+          <p>I have your note. When a ride starts to take shape, I'll write.</p>
+          <p class="fine">You can close this page.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <footer class="colophon">
+    <p class="sig">Solene</p>
+    <p><a href="https://www.instagram.com/solene.horses/" target="_blank" rel="noreferrer">@solene.horses</a></p>
+    <p>Horseback adventures. For riders 18 and over.</p>
+  </footer>
+
+  <iframe id="bridge" name="solene-bridge" hidden title="Sending your note"></iframe>
+  <script src="data.js"></script>
+  <script src="payload.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
