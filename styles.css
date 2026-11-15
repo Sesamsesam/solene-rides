@@ -788,7 +788,7 @@ fieldset.is-bad { box-shadow: inset 2px 0 0 var(--saddle); padding-left: 0.85rem
 }
 
 .hero.trip .hero-media img {
-  object-position: center 42%;
+  object-position: 34% 60%;
   transform: none;
 }
 
@@ -906,7 +906,8 @@ fieldset.is-bad { box-shadow: inset 2px 0 0 var(--saddle); padding-left: 0.85rem
 
 @media (max-width: 720px) {
   .hero.trip { justify-content: flex-end; }
-  .hero.trip .hero-copy { max-width: none; padding-bottom: 2.4rem; }
+  .hero.trip .hero-copy { max-width: 16.5rem; padding-bottom: 2.4rem; }
+  .hero.trip .hero-media img { object-position: 14% 50%; }
   .hero.trip .hero-shade {
     background:
       linear-gradient(180deg, rgba(22, 19, 16, 0.5) 0%, rgba(22, 19, 16, 0.12) 14%, transparent 26%),
